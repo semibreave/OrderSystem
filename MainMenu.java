@@ -64,18 +64,18 @@ class MainMenu
 			
 			try{
 				
-				//System.out.println(invoker.getElementName(1) + " " + invoker.getElementID(1));
+				System.out.println(invoker.getElementName(1));
 			}
 			
-			//catch(IndexOutOfBoundsException e){
-			//	
-			//	System.out.println("No record to show.Please add an item first.");
-			//}
-			
-			catch(ArrayIndexOutOfBoundsException e){
+			catch(IndexOutOfBoundsException e){
 				
-				System.out.println("No such record to show.");
+				System.out.println("No record to show.Please add an item first.");
 			}
+			
+			//catch(ArrayIndexOutOfBoundsException e){
+			//	
+			//	System.out.println("No such record to show.");
+			//}
 			
 				
 				System.console().readLine("Press Enter to go back:");
