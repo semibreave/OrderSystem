@@ -3,7 +3,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.io.IOException;
 
-//test comment
 
 class MainMenu
 {
@@ -64,7 +63,14 @@ class MainMenu
 			
 			try{
 				
-				System.out.println(invoker.getElementName(1));
+				
+				for(int i = 0; i < invoker.getObjSize();i++)
+					
+				
+				System.out.println(invoker.getElementName(i));
+				
+				
+				
 			}
 			
 			catch(IndexOutOfBoundsException e){
@@ -72,10 +78,7 @@ class MainMenu
 				System.out.println("No record to show.Please add an item first.");
 			}
 			
-			//catch(ArrayIndexOutOfBoundsException e){
-			//	
-			//	System.out.println("No such record to show.");
-			//}
+			
 			
 				
 				System.console().readLine("Press Enter to go back:");

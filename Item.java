@@ -34,9 +34,9 @@ public class Item
 	}
 	
 	
-	public String getObjSize(){
+	public int getObjSize(){
 	
-	   return "this is osize";
+	   return obj.size();
 
 	}
 	
