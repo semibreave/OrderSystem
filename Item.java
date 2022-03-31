@@ -28,9 +28,24 @@ public class Item
 		obj.add(new Item(id,name,price,category));
 	}
 	
-	public String getElementName(int index)
+	public int getID(int index)
+	{
+		return obj.get(index).id;
+	}
+	
+	public String getName(int index)
 	{
 		return obj.get(index).name;
+	}
+	
+	public double getPrice(int index)
+	{
+		return obj.get(index).price;
+	}
+	
+	public String getCategory(int index)
+	{
+		return obj.get(index).category;
 	}
 	
 	
@@ -38,18 +53,6 @@ public class Item
 	
 	   return obj.size();
 
-	}
-	
-	public static void main(String args[])
-	{
-		
-		Item dummy = new Item();
-	
-		dummy.addItem(1421,"Burger",15.5,"Main");
-		dummy.addItem(1126,"Shashimi",18.1,"Appetizer");
-		dummy.addItem(1421,"Pizza",18.4,"Main");
-		System.out.println(dummy.getElementName(1));
-		//System.out.println(dummy.getName(1));
 	}
 	
 }

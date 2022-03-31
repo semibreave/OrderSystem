@@ -34,8 +34,7 @@ class MainMenu
 			
 			System.out.println("\t \t <1>.Add Item");
 			System.out.println("\t \t <2>.Show Item");
-			System.out.println("\t \t <3>.Show array length");
-			System.out.println("\t \t <4>.Exit");
+			System.out.println("\t \t <3>.Exit");
 			
 			String choice = System.console().readLine("Your choice:");
 			
@@ -60,25 +59,23 @@ class MainMenu
 			}
 			
 			else if(choice.equals("2")){
-			
-			try{
 				
+				if(invoker.getObjSize() != 0){
 				
-				for(int i = 0; i < invoker.getObjSize();i++)
+					System.out.println("Total Items:" + invoker.getObjSize());
 					
+					for(int i = 0; i < invoker.getObjSize();i++)
+					
+					System.out.println("ID:"+invoker.getID(i)+"\t"+ "Item:" + invoker.getName(i)+ "\t" + "Price:" + invoker.getPrice(i)+"\t"+"Category:" + invoker.getCategory(i));		
+					
+				}
 				
-				System.out.println(invoker.getElementName(i));
+				else{
+					
+					System.out.println("No record to show.Please add an item first.");
+				}
 				
 				
-				
-			}
-			
-			catch(IndexOutOfBoundsException e){
-				
-				System.out.println("No record to show.Please add an item first.");
-			}
-			
-			
 			
 				
 				System.console().readLine("Press Enter to go back:");
@@ -88,12 +85,6 @@ class MainMenu
 			}
 			
 			else if(choice.equals("3")){
-				
-				System.out.println(invoker.getObjSize());
-				
-			}
-				
-			else if(choice.equals("4")){
 				break;
 			}
 		}
