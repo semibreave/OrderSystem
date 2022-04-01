@@ -40,25 +40,38 @@ class MainMenu
 			
 			if(choice.equals("1")){
 				
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+				
+				try{
+					
+					ID = Integer.parseInt(System.console().readLine("Enter Item ID:"));
+				
+					name = System.console().readLine("Enter Item Name:");
+					
+					price = Double.parseDouble(System.console().readLine("Enter Item Price:"));
+					
+					category =System.console().readLine("Enter Item Category:");
+					
+					invoker.addItem(ID,name,price,category);
+				}
+				
+				catch(NumberFormatException e){
+					
+					System.out.println("Only numbers allowed");
+					
+					System.console().readLine("Press Enter to go back to main menu:");
+				}
 				
 				
-				ID = Integer.parseInt(System.console().readLine("Enter Item ID:"));
 				
-				name = System.console().readLine("Enter Item Name:");
-				
-				price = Double.parseDouble(System.console().readLine("Enter Item Price:"));
-				
-				category =System.console().readLine("Enter Item Category:");
-				
-				
-
-				invoker.addItem(ID,name,price,category);	
 				
 				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 				
 			}
 			
 			else if(choice.equals("2")){
+				
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 				
 				if(invoker.getObjSize() != 0){
 				
@@ -73,13 +86,13 @@ class MainMenu
 				else{
 					
 					System.out.println("No record to show.Please add an item first.");
+					
+					
 				}
-				
-				
-			
 				
 				System.console().readLine("Press Enter to go back:");
 				
+			
 				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 				
 			}
